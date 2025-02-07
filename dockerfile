@@ -9,8 +9,8 @@ ENV COMPOSER_HOME "/opt/composer"
 ENV PATH "$PATH:/opt/composer/vendor/bin"
 
 RUN apt-get update && \
-    apt-get -y install git unzip libzip-dev && \
-    docker-php-ext-install zip pdo
+    apt-get -y install git unzip libzip-dev libgmp-dev && \
+    docker-php-ext-install zip pdo gmp
 
 RUN composer install
 
