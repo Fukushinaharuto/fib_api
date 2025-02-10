@@ -29,7 +29,7 @@ docker compose up -d
 ```
 curl -X GET -H "Accept: application/json" "http://localhost:8005/api/fib?n=3"
 ```
--
+
 ## **2. PHPUnitを使用したテスト**
 - backフォルダ内で実行します。
 ```
@@ -43,7 +43,7 @@ fib_api
 ### プロジェクトの目的
 フィボナッチ数列のn番目の数を返す。
 
-### 使用したファイルのディレクトリ構成
+### 使用したファイル概要とディレクトリ構成
 ```
 fib_api/
  ├── back/
