@@ -36,7 +36,7 @@ curl -X GET -H "Accept: application/json" "http://localhost:8005/api/fib?n=99"
 php artisan test --env=testing  
 ```
 
-# **ソースコードの構成・概要**
+# **構成・概要**
 ### プロジェクト名
 fib_api
 
