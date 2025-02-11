@@ -25,7 +25,7 @@ class FibonacciController extends Controller
             }
             return response()->json(['result' => gmp_strval($result)], 200);
         } catch (\Exception $error) {
-            return response()->json(['message' => '予期せぬエラーが発生しました。','error' => $error->getMessage()], 400);
+            return response()->json(['message' => 'Bad request','error' => $error->getMessage()], 400);
         }
     }
 }
