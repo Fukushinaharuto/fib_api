@@ -61,8 +61,9 @@ fib_api/
  │   │       └── Requests/FibonacciController.php     #リクエストnのバリデーションとそのエラーメッセージが記載されている。
  │   │      
  │   ├── routes/api.php                               #APIのルーティングが記載されている
- │   └── tests/Feature/FibonacciControllerTest.php    #FibonacciControllerのテストケースが記載されている。
- │
+ │   ├── tests/Feature/FibonacciControllerTest.php    #FibonacciControllerのテストケースが記載されている。
+ │   └── .env.testing                                 #テストに必要なAPP_KEYが記載されている。
+ │ 
  ├── docker-compose.yml                               #dockerコンテナの設定が記載されている。
  └── dockerfile                                       #dockerイメージの設定が記載されている。
 ```
