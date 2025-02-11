@@ -19,6 +19,8 @@ class FibonacciRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+
+    // バリデーション設定
     public function rules(): array
     {
         return [
@@ -30,6 +32,7 @@ class FibonacciRequest extends FormRequest
         ];
     }
 
+    // バリデーションエラーのメッセージ
     public function messages()
     {
         return [
