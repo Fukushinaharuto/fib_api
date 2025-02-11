@@ -33,7 +33,7 @@ curl -X GET -H "Accept: application/json" "http://localhost:8005/api/fib?n=99"
 ## **2. PHPUnitを使用したテスト**
 - backフォルダ内で実行します。
 ```
-php artisan test
+php artisan test --env=testing  
 ```
 
 # **ソースコードの構成・概要**
