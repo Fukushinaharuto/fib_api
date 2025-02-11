@@ -29,11 +29,11 @@ class FibonacciController extends Controller
                 $previousNumber = $currentNumber;
                 $currentNumber = $result;
             }
-            // フィボナッチ数列のn列目をjson形式で返す。
+            // フィボナッチ数列のn列目をjson形式で返している。
             // string型で返している。
             return response()->json(['result' => gmp_strval($result)], 200);
         } catch (\Exception $error) {
-            // エラーが起きた時に返す。
+            // エラーが起きた時に返している。
             return response()->json(['message' => 'Bad request','error' => $error->getMessage()], 400);
         }
     }
