@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class FibonacciRequest extends FormRequest
 {
@@ -28,6 +30,7 @@ class FibonacciRequest extends FormRequest
                 'required',
                 'integer',
                 'min:1',
+                'max:1000',
             ]
         ];
     }
@@ -37,8 +40,19 @@ class FibonacciRequest extends FormRequest
     {
         return [
             'n.required' => 'nは必須です。',
-            'n.integer' => 'nは整数にしてください。',
-            'n.min' => 'nは正の数にしてください。',
+            'n.integer' => 'nは整数である必要があります。',
+            'n.min' => 'nは1以上である必要があります。',
+            'n.max' => 'nを1000以下にする必要があります。', 
         ];
+    }
+
+    // バリデーションに引っかかった場合は、エラーをレスポンスする。
+    // リダイレクトをしていたのは、laravelの仕様でしたのでオーバーライドを行い、errorが入ったmessageのjsonが返されるように修正
+    function failedValidation(Validator $validator)
+    {
+        $errors = $validator->errors()->first();
+        throw new HttpResponseException(response()->json([
+            'message' => $errors
+        ], 400, [], JSON_UNESCAPED_UNICODE));
     }
 }
